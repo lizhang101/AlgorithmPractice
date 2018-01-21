@@ -1,2 +1,2 @@
 # Prog_Algorithm
-Some collected interesting algorithm programming questions.
+Some interesting algorithm programming questions.
