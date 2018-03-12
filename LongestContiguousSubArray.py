@@ -15,7 +15,10 @@ Input:  arr[] = {1, 56, 58, 57, 90, 92, 94, 93, 91, 45};
 Output: Length of the longest contiguous subarray is 5
 """
 
-
+#can't change the order of the array, so can't sort.
+#the subarray can't contains non-continuous numbers.
+#fact: if an array contains numbers that can be arranged in a continous sequence => number of numbers = max_number - min_number.
+#      that is, the numbers in the array can be treated as indices.
 def length1(nums):
     max_len = 1
     for i in range(len(nums)-1):
@@ -32,4 +35,6 @@ a = [1, 56, 58, 57, 90, 92, 94, 93, 91, 45]
 #a = [14, 12, 11, 20]
 
 print(length1(a))
+
+
 
