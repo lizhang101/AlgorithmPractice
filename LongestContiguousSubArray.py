@@ -1,20 +1,35 @@
-def length2(nums):
 
-    if len(nums) < 2:
-        return len(nums)
+"""
+Length of the largest subarray with contiguous elements | Set 1
+Given an array of distinct integers, find length of the longest subarray which contains numbers that can be arranged in a continuous sequence.
+
+Examples:
+
+Input:  arr[] = {10, 12, 11};
+Output: Length of the longest contiguous subarray is 3
+
+Input:  arr[] = {14, 12, 11, 20};
+Output: Length of the longest contiguous subarray is 2
+
+Input:  arr[] = {1, 56, 58, 57, 90, 92, 94, 93, 91, 45};
+Output: Length of the longest contiguous subarray is 5
+"""
+
+
+def length1(nums):
     max_len = 1
-    cur_len = 1
-    nums.sort()
-    print(nums)
     for i in range(len(nums)-1):
-        if nums[i] == nums[i+1]-1:
-            cur_len += 1
-            max_len = max(cur_len, max_len)
-        else:
-            cur_len = 1
+        mn = nums[i]
+        mx = nums[i]
+        for j in range(i+1, len(nums)):
+            mn = min(mn, nums[j])
+            mx = max(mx, nums[j])
+            if (mx - mn) == j - i:
+                max_len = max(max_len, mx - mn + 1)
     return max_len
 
-a = [1, 3, 2, 4]
+a = [1, 56, 58, 57, 90, 92, 94, 93, 91, 45]
+#a = [14, 12, 11, 20]
 
-print(length2(a))
+print(length1(a))
 
