@@ -1,6 +1,7 @@
 import random
 
 
+#quick sort
 def partition(arr, left, right):
     pidx = random.randint(left, right+1)
     arr[-1], arr[pidx] = arr[pidx], arr[-1]
