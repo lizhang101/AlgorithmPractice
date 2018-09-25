@@ -2,7 +2,7 @@
 import utili
 
 def partitionList(head, T):
-    dummy = ListNode(0)
+    dummy = utili.ListNode(0)
     dummy.next = head
     pre = p1 = dummy
     p0 = head
@@ -35,10 +35,10 @@ def partitionList(head, T):
     
 
 if __name__ == "__main__":
-    head = genList(list(range(5, 0, -1)))
-    printList(head)
+    head = utili.genList(list(range(5, 0, -1)))
+    utili.printList(head)
     head = partitionList(head, 3)
     print("---------")
-    printList(head)
+    utili.printList(head)
     
     
