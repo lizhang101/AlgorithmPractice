@@ -1,9 +1,6 @@
 #partition a list with a given value T. all nodes with values smaller than T go before the node with values >= T. The original order of two parts should be preserved.
-class ListNode:
-    def __init__(self, v):
-        self.val = v
-        self.next = None
-        
+import utili
+
 def partitionList(head, T):
     dummy = ListNode(0)
     dummy.next = head
@@ -36,28 +33,6 @@ def partitionList(head, T):
    #        p0 = p0.next
     return dummy.next
     
-def genListRand(L):
-    import random
-    p = dummy = ListNode(0)
-    for i in range(L):
-        p.next = ListNode(random.randint(1, 100))
-        p = p.next
-    return dummy.next
-
-def genList(L):
-    import random
-    p = dummy = ListNode(0)
-    for n in L:
-        p.next = ListNode(n)
-        p = p.next
-    return dummy.next
-
-def printList(head):
-    i = 0
-    while head:
-        print("i:{} val:{}".format(i, head.val))
-        head = head.next
-        i += 1
 
 if __name__ == "__main__":
     head = genList(list(range(5, 0, -1)))
