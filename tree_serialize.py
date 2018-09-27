@@ -15,8 +15,11 @@ def deserializeTree(head):
 
 
     def deserializeHelper():
-        val = next(vals)
-        if val == '#':
+        try:
+            val = next(vals)
+            if val == '#':
+                return None
+        except StopIteration:
             return None
         node = utili.TreeNode(int(val))
         node.left = deserializeHelper()
