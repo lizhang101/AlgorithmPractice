@@ -70,6 +70,9 @@ void move_thread() {
 
 int main() {
     cout << "thread id:" << this_thread::get_id() << " main\n";
+    //this indicate how many hardware thread can run concurrently. 
+    // Don't create too many threads than that hw can support. Otherwise it will hurt performance, called over subscription.
+    cout << "hw thread:" << thread::hardware_concurrency() << endl;
     use_factor_1();
     use_factor_2();
     use_factor_3();
